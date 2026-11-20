@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-dark d-flex justify-content-between" style="background-color: #20c997;">
+            <div class="container-fluid">
+                <a class="navbar-brand"
+                    style="font-size:xx-large; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    <img src="assets/ampoule-a-idees.png" alt="" width="80" height="70"
+                        class="d-inline-block align-text-center">
+                    Wekelab
+                </a>
+
+                <ul class="navbar-nav flex-row gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Activités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                    <button class="btn bg-warning" type="button" data-bs-toggle="modal"
+                        data-bs-target="#nouvelleActiviteModal">Nouvelle Activité</button>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="row mt-4">
+                <div class="col-12 h-500 w-80 h-25 d-flex align-items-center justify-content-center gap-5"
+                    style="background-color: #DFEBFF; border-radius: 9px;">
+                    <h1>Wekelab : </h1>
+                    <h4>Centralisez vos Réveils Pédagogiques</h4>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div class="container-fluid px-0 my-5">
+            <div class="card shadow-sm border p-4 rounded-4 bg-white">
+                <form>
+                    <div class="row g-3 align-items-center">
+
+                        <div class="col-md-8">
+                            <label for="searchEmployee" class="form-label fw-semibold text-secondary">Rechercher une
+                                Activité</label>
+                            <input type="text" class="form-control py-2" id="searchActivite"
+                                placeholder="Titre d'activité">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="departmentSelect" class="form-label fw-semibold text-secondary">Thème
+                                d'activité</label>
+                            <select class="form-select py-2" id="typeSelect">
+                                <option selected>Tous les thèmes</option>
+                                <option value="jeu">jeu</option>
+                                <option value="apprentissage">apprentissage</option>
+                                <option value="exercice">exercice</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <section class="container m-0">
+
+            <div class="row m-0" id="books">
+
+
+
+            </div>
+
+        </section>
+
+
+
+        <div class="modal fade" id="nouvelleActiviteModal" tabindex="-1" aria-labelledby="nouvelleActiviteModal"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nouveauParticipantModal">Ajouter une activité</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex flex-column align-middle ">
+                        <form name="formDAjout">
+
+                            <label for="username">Titre d'activité</label>
+                            <input type="text" name="titre" class="form-control" id="titre" required>
+                            <label for="name">Theme d'activité</label>
+                            <input type="text" name="theme" class="form-control" id="theme" required>
+                            <label for="prénom">L'objectif d'activité</label>
+                            <input type="text" name="objectif" class="form-control" id="objectif" required>
+                            <label for="username">Duree d'activité</label>
+                            <input type="text" name="duree" class="form-control" id="duree" required>
+                            <label for="username">Description d'activité</label>
+                            <input type="text" name="description" class="form-control" id="description" required>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-success"
+                                    id="confirmer-participant">Confirmer</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="modal fade" id="modifierActiviteModal" tabindex="-1" aria-labelledby="modifierActiviteModal"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modifierActiviteModal">Modifier une activité</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex flex-column align-middle ">
+                        <form name="formModification">
+
+                            <label for="username">Titre d'activité</label>
+                            <input type="text" name="titre" class="form-control" id="titre" required>
+                            <label for="name">Theme d'activité</label>
+                            <input type="text" name="theme" class="form-control" id="theme" required>
+                            <label for="prénom">L'objectif d'activité</label>
+                            <input type="text" name="objectif" class="form-control" id="objectif" required>
+                            <label for="username">Duree d'activité</label>
+                            <input type="text" name="duree" class="form-control" id="duree" required>
+                            <label for="username">Description d'activité</label>
+                            <input type="text" name="description" class="form-control" id="description" required>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-success"
+                                    id="confirmer-participant">Confirmer</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <dialog id="ma-popup">
+            <form id="mon-formulaire">
+                <label for="champ-texte">Votre information :</label>
+                <input type="text" id="fullname" required placeholder="Écrivez ici...">
+                <button type="submit">Envoyer</button>
+            </form>
+        </dialog>
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
